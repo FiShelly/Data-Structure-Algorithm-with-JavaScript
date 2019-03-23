@@ -27,7 +27,7 @@
         return this.table[HashTable.getHashCode(key)];
     };
 
-    window.onload = function () {
+    window.addEventListener('load', function () {
         testin.test('1. HashTable operation', function () {
             var hashTable = new HashTable();
 
@@ -46,6 +46,5 @@
             testin.assert(hashTable.get($0) === $0, 'The key is ' + $0 + ', the value is ' + $0);
             testin.assert(hashTable.remove($0), 'Remove ' + $0);
         });
-
-    };
+    });
 })();
