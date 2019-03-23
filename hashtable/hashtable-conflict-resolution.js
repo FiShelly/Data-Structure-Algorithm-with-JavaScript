@@ -16,6 +16,15 @@
         }
         return hash % 37;
     };
+
+    HashTable.getHashCodeByDjb2 = function (key) {
+        var hash = 5381;
+        for (var i = 0; i < key.length; i++) {
+            hash = hash * 33 + key.charCodeAt(i);
+        }
+        return hash % 1013;
+    };
+
     //向散列表添加元素（分离链接解决冲突）
     HashTable.prototype.put = function (key, val) {
         var posi = HashTable.getHashCode(key);
