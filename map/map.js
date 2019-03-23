@@ -19,7 +19,7 @@
     Map.prototype.has = function (key) {
         return this.items.hasOwnProperty(key);
     };
-    //删除集合指定的元素
+    //根据key获取指定的元素
     Map.prototype.get = function (key) {
         return this.items[key];
     };
@@ -46,7 +46,7 @@
         }
     };
 
-    //返回集合values数组
+    //返回集合key数组
     Map.prototype.keys = function () {
         return Object.keys(this.items);
     };
@@ -68,7 +68,7 @@
             map.set($4, $4);
 
             testin.assert(map.size() === 5, 'The map size is 5');
-            testin.assert(map.get($0) === $0, 'The key is 0, the value size 0');
+            testin.assert(map.get($0) === $0, 'The key is 0, the value 0');
             testin.assert(!map.clear() && map.size() === $0, 'After clear, the map is length is 0');
         });
 
